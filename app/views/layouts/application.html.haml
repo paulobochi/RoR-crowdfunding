@@ -1,0 +1,37 @@
+!!!
+%html
+  %head
+    %title Crowdfunding
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+
+    %nav.navbar.navbar-default
+      .container-fluid
+        <!-- Brand and toggle get grouped for better mobile display -->
+        .navbar-header
+          %button.navbar-toggle.collapsed{type: 'button', data: {toggle: 'collapse', target: '#navbar-collapse-1'}, aria: {expanded: 'false'}}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          = link_to 'Crowdfunding!', root_path, class: 'navbar-brand'
+        #navbar-collapse-1.collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li= link_to 'Explore', root_path
+            %li= link_to 'How it works', root_path
+          %ul.nav.navbar-nav.navbar-right
+            %li= link_to 'Start A Campaign', new_campaign_path
+            - if user_signed_in?
+              %li= link_to 'Log out', destroy_user_session_path, method: :delete
+            - else
+              %li= link_to 'Sign Up', new_user_registration_path
+              %li= link_to 'Log In', new_user_session_path
+
+    .container-fluid
+      - if notice.present?
+        %p.notice= notice
+      - if alert.present?
+        %p.alert= alert
+      = yield

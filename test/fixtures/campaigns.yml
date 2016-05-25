@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  campaign_type: MyString
+  amount_to_raise_cents: 1
+  end_date: 
+  category_id: 
+  user_id: 
+
+two:
+  title: MyString
+  campaign_type: MyString
+  amount_to_raise_cents: 1
+  end_date: 
+  category_id: 
+  user_id: 
