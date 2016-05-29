@@ -1,2 +1,7 @@
 - @campaigns.each do |campaign|
-  %p= link_to campaign.title, campaign_path(campaign)
+  = link_to campaign_path(campaign) do
+    = image_tag(campaign.picture_url(:thumbnail), :alt => campaign.title)
+    - if campaign.category.present?
+      %span= campaign.category.name
+    %span= campaign.amount_to_raise.format
+    %p= campaign.title

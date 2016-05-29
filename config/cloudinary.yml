@@ -1,0 +1,18 @@
+development:
+  cloud_name: minter
+  api_key: '893655167765197'
+  api_secret: cJIUiKWORU2Dj-6q4X0o3rYAO5c
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: minter
+  api_key: '893655167765197'
+  api_secret: cJIUiKWORU2Dj-6q4X0o3rYAO5c
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: minter
+  api_key: '893655167765197'
+  api_secret: cJIUiKWORU2Dj-6q4X0o3rYAO5c
+  enhance_image_tag: true
+  static_image_support: false

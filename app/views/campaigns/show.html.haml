@@ -1,1 +1,27 @@
-= @campaign.title
+%section#campaign-page
+  .campaign-header
+    .row
+      .col-sm-7
+        - if @campaign.video_url.present?
+          .embed-responsive.embed-responsive-16by9
+            %iframe.embed-responsive-item{src: @campaign.video_url}
+        - else
+          = image_tag(@campaign.picture_url, alt: @campaign.title, class: 'img-responsive')  
+      .col-sm-5
+        %h1.title= @campaign.title
+        %p.description= @campaign.short_description
+        %p.owner= @campaign.owner.email
+        .progress
+          .progress-bar{role: 'progressbar', aria: {valuenow: '60', valuemin: '0', valuemax: '100'}, style: "width: #{Money.from_amount(9686.0)/@campaign.amount_to_raise*100}%"} 
+        %span= "#{Money.from_amount(9686.0)/@campaign.amount_to_raise*100}% of #{@campaign.amount_to_raise.format}"
+        %span= @campaign.end_at
+  .campaign-body
+    .row
+      .col-sm-7
+        .story
+          = @campaign.story.html_safe
+      .col-sm-5
+	
+  .actions
+    = link_to 'Edit', edit_campaign_path
+    = link_to 'Delete', campaign_path, method: :delete, data: { confirm: 'Are you sure?' }

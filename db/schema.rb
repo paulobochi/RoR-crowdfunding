@@ -11,11 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160525021204) do
+ActiveRecord::Schema.define(version: 20160529002823) do
 
   create_table "campaigns", force: :cascade do |t|
     t.string   "title"
-    t.string   "campaign_type"
     t.integer  "amount_to_raise_cents",    default: 0,     null: false
     t.string   "amount_to_raise_currency", default: "USD", null: false
     t.integer  "category_id"
@@ -23,6 +22,10 @@ ActiveRecord::Schema.define(version: 20160525021204) do
     t.datetime "end_at"
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
+    t.string   "picture"
+    t.string   "video_url"
+    t.text     "story"
+    t.string   "short_description"
   end
 
   add_index "campaigns", ["category_id"], name: "index_campaigns_on_category_id"

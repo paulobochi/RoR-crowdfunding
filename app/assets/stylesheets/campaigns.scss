@@ -1,3 +1,28 @@
 // Place all the styles related to the Campaigns controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.campaign-header {
+  .title {
+	font-weight: 600;
+	font-size: 24px;
+	color: #2a2a2a;
+  }
+  .description {
+	font-size: 16px;
+	color: #6a6a6a;
+  }
+}
+
+.campaign-body {
+  margin-top: 50px;
+  
+  .story {
+    padding: 0 30px;
+	
+	img {
+	  width: 100% !important;
+      height: auto !important;
+	}
+  }
+}

@@ -1,4 +1,24 @@
 = simple_form_for @campaign do |f|
   = f.input :title
+  = f.input :short_description
   = f.input :amount_to_raise
-  = f.button :submit, class: 'btn-primary'
+  = f.hidden_field(:picture_cache)
+  = f.input :picture
+  = f.input :video_url
+  = f.association :category, prompt: 'Select Category'
+  = f.input :story, :as => :ckeditor, :input_html => { :ckeditor => {:toolbar => 'mini'} }
+  %br
+  .text-center
+    = f.button :submit, ( f.object.new_record? ? "Start a Campaign" : "Update Campaign"), class: 'btn-primary'
+  %br
+  
+:javascript
+  $(window).on('page:before-unload', function(e){
+    if (CKEDITOR && CKEDITOR.instances) {
+      for(name in CKEDITOR.instances) {
+        if (CKEDITOR.instances.hasOwnProperty(name)) {
+          CKEDITOR.instances[name].destroy(true);
+        }
+      }
+    }
+  });
