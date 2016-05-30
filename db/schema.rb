@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20160529002823) do
 
   create_table "campaigns", force: :cascade do |t|
     t.string   "title"
+    t.string   "campaign_type"
     t.integer  "amount_to_raise_cents",    default: 0,     null: false
     t.string   "amount_to_raise_currency", default: "USD", null: false
     t.integer  "category_id"

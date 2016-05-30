@@ -1,28 +1,74 @@
 // Place all the styles related to the Campaigns controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$light-gray: rgba(0,0,0,0.3);
+$dark-gray: #2a2a2a;
+
+.campaign-card {
+  display: block;
+  border: solid 1px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+  &:hover {
+    text-decoration: none;
+    border-color:rgba(0,0,0,0.3);
+  }
+  .campaign-details {
+    padding: 7px;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .category {
+      text-transform: uppercase;
+      color: $light-gray;
+      font-size: 1rem;
+      font-weight: bolder;
+      margin-bottom: 5px;
+    }
+    .title {
+      color: $dark-gray;
+      font-weight: 600;
+    }
+    .description {
+      color: $dark-gray;
+    }
+
+    .meta {
+      .amount-raised {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: $dark_gray;
+      }
+      .progress {
+        height: 10px;
+        border-radius: 0;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
 
 .campaign-header {
   .title {
-	font-weight: 600;
-	font-size: 24px;
-	color: #2a2a2a;
+    font-weight: 600;
+	  font-size: 24px;
+	  color: $dark-gray;
   }
   .description {
-	font-size: 16px;
-	color: #6a6a6a;
+	  font-size: 16px;
+	  color: #6a6a6a;
   }
 }
 
 .campaign-body {
   margin-top: 50px;
-  
+
   .story {
     padding: 0 30px;
-	
-	img {
-	  width: 100% !important;
+  	img {
+  	  width: 100% !important;
       height: auto !important;
-	}
+  	}
   }
 }

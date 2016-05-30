@@ -1,7 +1,18 @@
-- @campaigns.each do |campaign|
-  = link_to campaign_path(campaign) do
-    = image_tag(campaign.picture_url(:thumbnail), :alt => campaign.title)
-    - if campaign.category.present?
-      %span= campaign.category.name
-    %span= campaign.amount_to_raise.format
-    %p= campaign.title
+%section#campaigns
+  .row
+    - @campaigns.each do |campaign|
+      .col-md-3.col-sm-4.col-xs-6.col-xxs-12
+        = link_to campaign_path(campaign), class:'campaign-card' do
+          = image_tag(campaign.picture_url(:thumbnail), alt: campaign.title, class: 'img-responsive')
+          .campaign-details
+            .cause
+              - if campaign.category.present?
+                .category= campaign.category.name
+              .title= campaign.title
+              .description= campaign.short_description
+            .meta
+              .amount-raised= Money.from_amount(9686.0).format 
+              .progress
+                .progress-bar{role: 'progressbar',
+                aria: {valuenow: '60', valuemin: '0', valuemax: '100'},
+                style: "width: #{Money.from_amount(9686.0)/campaign.amount_to_raise*100}%"}

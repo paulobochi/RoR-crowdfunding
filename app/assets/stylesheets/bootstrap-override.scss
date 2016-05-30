@@ -6,6 +6,12 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+@media (max-width: 450px) {
+  .col-xxs-12 {
+    width: 100%;
+  }
+}
+
 @media (min-width: 1280px) {
   .container {
     width: 1280px;
@@ -13,4 +19,3 @@ body {
     padding-right: 30px;
   }
 }
-
