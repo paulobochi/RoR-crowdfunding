@@ -3,3 +3,18 @@
 @import 'bootstrap';
 @import 'bootstrap-override';
 @import 'campaigns';
+
+.navbar-nav > li > a.start-campaign {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 10px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+
+  &:hover, &:focus {
+    color: white;
+    background-color: #286090;
+    border-color: #122b40;
+  }
+}

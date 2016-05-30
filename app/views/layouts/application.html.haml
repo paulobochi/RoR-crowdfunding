@@ -22,7 +22,7 @@
             %li= link_to 'Explore', root_path
             %li= link_to 'How it works', root_path
           %ul.nav.navbar-nav.navbar-right
-            %li= link_to 'Start A Campaign', new_campaign_path
+            %li= link_to 'Start A Campaign', new_campaign_path, class: "btn btn-primary start-campaign"
             - if user_signed_in?
               %li= link_to 'Log out', destroy_user_session_path, method: :delete
             - else
